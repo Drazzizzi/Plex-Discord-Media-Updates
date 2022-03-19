@@ -54,7 +54,7 @@ Running the script without changing the additional variables below will generate
 `lookback_period` - Media added since this long ago will be listed. It can be configured to be a set amount of minutes, hours, days, or weeks. 
 Format: `4m`, `3h`, `2d`, and `1w` respectively correspond to 4 minutes, 3 hours, 2 days, and 1 week. Defaults to `24h`.
 
-Note: Don't set this to be too long or some of the media in these lists will be skipped.
+> Note: Don't set this to be too long or some of the media in these lists will be skipped.
 
 `skip_movies` | `skip_tv` - Set to `True` or `False`. Skipped libraries will not be scanned or included in the webhook message
 
@@ -76,7 +76,7 @@ Note: Don't set this to be too long or some of the media in these lists will be 
 
 `max_length_exceeded_msg` - The message that will display if a list is too long and needs to be cut short. Should be less than 90 characters. Will be bolded and appended with two newlines to the end of the list. See the bottom of the 1-week screenshot in the `Screenshots` section for an example.
 
-# Running
+# Running the Script
 
 The python script is meant to be scheduled and run on a regular basis, and to have its `lookback_time` variable be set to match that schedule. The default setting has it scanning your plex library and sending discord messages every 24 hours; if you intend to keep it that way, an appropriate schedule for this would be to have it run every 24 hours. This can be achieved via crontab, systemd timers, or if you're on unraid, you can use the user scripts plugin.
 
