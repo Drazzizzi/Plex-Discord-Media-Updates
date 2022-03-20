@@ -55,8 +55,8 @@ Running the script without changing the additional variables below will generate
 
 These are additional variables along with their default values.
 
-`lookback_period = "24h"` - Media added since this long ago will be listed. It can be configured to be a set amount of minutes, hours, days, or weeks. 
-Format: `4m`, `3h`, `2d`, and `1w` respectively correspond to 4 minutes, 3 hours, 2 days, and 1 week.
+`lookback_period = "24h"` - Media added since this long ago will be listed. It can be configured to be a set amount of minutes, hours, days, or weeks.  
+Format/Examples: `"4m"`, `"3h"`, `"2d"`, and `"1w"` are all separately available options that respectively correspond to 4 minutes, 3 hours, 2 days, and 1 week.
 
 > Note: Don't set this to be too long or some of the media in these lists will be skipped.
 
@@ -72,7 +72,7 @@ Format: `4m`, `3h`, `2d`, and `1w` respectively correspond to 4 minutes, 3 hours
 
 `bullet = "•"` - The symbol to denote each new entry in the lists in the embeds. Can be replaced with emotes (e.g. :point_right:)
 
-`movie_embed_colour = 0xFB8800` | `tv_embed_colour = 0xDE4501` - The colours for the embeds (the coloured line on the left side of each embed). Keep the `0x` and change the last 6 characters to the hex codes of your preferred colours.
+`movie_embed_colour = 0xFB8800` | `tv_embed_colour = 0xDE4501` - The colours for the embeds (the coloured line on the left side of each embed - see the screenshots section for examples). Keep the `0x` and change the last 6 characters to the hex codes of your preferred colours.
 
 `movie_emote = ":clapper:"` | `tv_emote = ":tv:"` - Optional emotes that will be appended to the title of each embed - see the screenshots for examples. Set them to empty strings `""` to disable them.
 
