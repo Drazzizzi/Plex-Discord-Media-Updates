@@ -51,30 +51,32 @@ Running the script without changing the additional variables below will generate
 
 ## Additional Customization
 
-`lookback_period` - Media added since this long ago will be listed. It can be configured to be a set amount of minutes, hours, days, or weeks. 
-Format: `4m`, `3h`, `2d`, and `1w` respectively correspond to 4 minutes, 3 hours, 2 days, and 1 week. Defaults to `24h`.
+These are additional variables along with their default values.
+
+`lookback_period = "24h"` - Media added since this long ago will be listed. It can be configured to be a set amount of minutes, hours, days, or weeks. 
+Format: `4m`, `3h`, `2d`, and `1w` respectively correspond to 4 minutes, 3 hours, 2 days, and 1 week.
 
 > Note: Don't set this to be too long or some of the media in these lists will be skipped.
 
-`skip_movies` | `skip_tv` - Set to `True` or `False`. Skipped libraries will not be scanned or included in the webhook message
+`skip_movies = False` | `skip_tv = False` - Skipped libraries will not be scanned or included in the webhook message
 
 `show_total_episodes = True` - Choose whether to show the total number of new episodes in the TV Show embed title
 
 `show_individual_episodes = True` - Choose whether to show the number of new episodes for each individual show in the TV Show embed title.
 
-`message_title` - The overall message caption that will go before the embeds. It will be bolded and put on its own line, and the loockback period will be appended to the end
+`message_title = "Additions/updates to the media library from the last"` - The overall message caption that will go before the embeds. It will be bolded and put on its own line, and the loockback period will be appended to the end - see the screenshots for examples.
 
-`embed_thumbnail` - Optional thumbnail that will go in all embeds. Set to an empty string ("") to disable it. Set to a direct image url string to enable it.
+`embed_thumbnail = ""` - Optional thumbnail that will go in all embeds. Set to an empty string `""` to disable it. Set to a direct image url string to enable it.
 
-`bullet` - The symbol to denote each new entry in the lists in the embeds. Can be replaced with emotes (e.g. :point_right:)
+`bullet = "•"` - The symbol to denote each new entry in the lists in the embeds. Can be replaced with emotes (e.g. :point_right:)
 
-`movie_embed_colour` | `tv_embed_colour` - The colours for each embed. Keep the `0x` and change the last 6 characters to the hex codes of your preferred colours.
+`movie_embed_colour = 0xFB8800` | `tv_embed_colour = 0xDE4501` - The colours for the embeds (the coloured line on the left side of each embed). Keep the `0x` and change the last 6 characters to the hex codes of your preferred colours.
 
-`movie_emote` | `tv_emote` - Optional emotes that will be appended to the title of each embed (see the screenshots for examples). Set to empty strings ("") to disable.
+`movie_emote = ":clapper:"` | `tv_emote = ":tv:"` - Optional emotes that will be appended to the title of each embed - see the screenshots for examples. Set them to empty strings `""` to disable them.
 
-`message_max_length` - The max length that embeds can reach before they become unsendable (it's technically 4096, but we need some headroom for `max_length_exceeded_msg`)
+`message_max_length = 4000` - The max length that embeds can reach before they become unsendable (it's technically 4096, but we need some headroom for `max_length_exceeded_msg`)
 
-`max_length_exceeded_msg` - The message that will display if a list is too long and needs to be cut short. Should be less than 90 characters. Will be bolded and appended with two newlines to the end of the list. See the bottom of the 1-week screenshot in the `Screenshots` section for an example.
+`max_length_exceeded_msg = "We couldn't fit all of the new media in one message, so check out the library for the rest!"` - The message that will display if a list is too long and needs to be cut short. Should be less than 90 characters. Will be bolded and appended with two newlines to the end of the list. See the bottom of the 1-week screenshot in the `Screenshots` section for an example.
 
 # Running the Script
 
