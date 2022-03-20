@@ -4,7 +4,7 @@ This is a customizable python script that will send Plex library updates to your
 
 # Screenshots
 
-The title changes to reflect your preferred recently-added search period, check out the examples below:
+In the screenshots below, notice how the title changes to naturally reflect your preferred recently-added search period:
 
 24-hour update:  
 ![](https://user-images.githubusercontent.com/44678543/159141632-db133f53-7858-4976-ba12-e2a21fe61590.png)
