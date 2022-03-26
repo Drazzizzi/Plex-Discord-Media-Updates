@@ -28,7 +28,7 @@ Notice how for lists that are too long, they get trimmed with an additional mess
 
 This script requires the external python modules `PlexAPI` and `dhooks`, which can be installed via pip:
 
-`pip install plexapi dhooks`
+`pip3 install plexapi dhooks`
 
 
 # Configuration
