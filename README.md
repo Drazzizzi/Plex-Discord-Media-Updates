@@ -18,7 +18,7 @@ In the screenshots below, notice how the title changes to naturally reflect your
 </details>
 <details><summary>Click to expand preview for 1-week update</summary>
 
-Notice how for lists that are too long, they get trimmed with an additional message at the bottom of each embed to let users know.
+Notice that lists that are too long will automatically get trimmed and an additional message will be appended at the bottom of each embed to let users know. This is to prevent the webhook from failing to send.
   
 ![](https://user-images.githubusercontent.com/44678543/159141139-b64742eb-0d6a-42a2-92e3-9f2d503e37ea.png)
 
