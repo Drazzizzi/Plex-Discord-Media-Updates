@@ -1,4 +1,4 @@
- # PlexDiscordUpdates
+ # Plex Discord Media Updates
 
 This is a customizable python script that will send plex library updates to your discord server via webhook. Including listing the titles and release years of all new shows/movies added within a configurable time period, it can also count the amount and includes them in its embed titles, as well as count the episodes of each show and total episodes overall - see the screenshots section for examples. 
 
@@ -26,69 +26,91 @@ Notice that lists that are too long will automatically get trimmed and an additi
 
 # Pre-Requisites
 
-This script requires the external python modules `PlexAPI` and `dhooks`, which can be installed via pip:
+This script requires Python 3, as well as the python modules outlined in pip_requirements.txt. From the same folder as this file, the modules can be installed via the command:
 
-`pip3 install plexapi dhooks`
+`pip3 install -r pip_requirements.txt`
 
 
 # Configuration
 
-These settings can all be set/customized in a clearly denoted `USER OPTIONS` section of PlexDiscordUpdates.py, marked by `BEGIN USER OPTIONS` and `END USER OPTIONS` dividers.
+All configuration and customizations is now done via the configuration file `config.yml` instead of via editing the python script itself.
 
 ## Basic Settings
 
-To be able to run this script with minimal configuration, these variables need to be set:
+To be able to run this script with minimal configuration, these fields must be set in the configuration file:
 
-`plex_url` - Your plex URL
+`plex`>`url` ~ Your plex URL. Defaults to `https://localhost:32400`.
 
-`plex_token` - Your plex token
+`plex`>`token` ~ Your plex token
 
-`movie_library` - The name of your Movies library in plex. Defaults to `Movies`.
+`plex`>`libraries`>`movies` ~ The name of your Movies library in plex. Defaults to `Movies`.
 
-`tv_library` - The name of your TV Show library in plex. Defaults to `TV Shows`. 
+`plex`>`libraries`>`shows` ~ The name of your TV Show library in plex. Defaults to `TV Shows`. 
 
-`webhook_url` - Your discord webhook URL
+`plex_discord_media_updates`>`webhook` ~ Your discord webhook URL
 
-Running the script without changing the additional variables below will generate an output similar to the screenshots.
+Once these fields are set, running the script without changing the additional fields below will generate an output similar to the screenshots.
 
-## Additional Customization
+## Advanced Customization
 
-These are additional variables along with their default values.
+These are additional fields for optional customizations, listed along with their default values. All of these additional settings are in the `plex_discord_media_updates` section of the configuration file.
 
-`lookback_period = "24h"` - Media added since this long ago will be listed. It can be configured to be a set amount of minutes, hours, days, or weeks.  
-Format/Examples: `"4m"`, `"3h"`, `"2d"`, and `"1w"` are all separately available options that respectively correspond to 4 minutes, 3 hours, 2 days, and 1 week.
+---
+
+`lookback_period` = `24h` ~ Media added since this long ago will be listed. It can be configured to be a set amount of minutes, hours, days, or weeks.  
+Format/Examples: `4m`, `3h`, `2d`, and `1w` are all separately available options that respectively correspond to 4 minutes, 3 hours, 2 days, and 1 week.
 
 > Note: Don't set this to be too long or some of the media in these lists will be skipped.
 
-`skip_movies = False` | `skip_tv = False` - Skipped libraries will not be scanned or included in the webhook message
+---
 
-`show_total_episodes = True` - Choose whether to show the total number of new episodes in the TV Show embed title
+Skipped libraries (if set to `True`) will not be scanned or included in the webhook message.  
+`skip_libraries`>`movies` = `False`
+`skip_libraries`>`shows` = `False`
 
-`show_individual_episodes = True` - Choose whether to show the number of new episodes for each individual show in the TV Show embed title.
+---
 
-`message_title = "Additions/updates to the media library from the last"` - The overall message caption that will go before the embeds. It will be bolded and put on its own line, and the loockback period will be appended to the end - see the screenshots for examples.
+`show_total_episode_count` = `True` ~ Choose whether to show the total number of new episodes in the TV Show embed title
 
-`embed_thumbnail = ""` - Optional thumbnail that will go in all embeds. Set to an empty string `""` to disable it. Set to a direct image url string to enable it.
+---
 
-`bullet = "•"` - The symbol to denote each new entry in the lists in the embeds. Can be replaced with emotes (e.g. :point_right:)
+`show_episode_count_per_show` = `True` ~ Choose whether to show the number of new episodes for each individual show in the TV Show embed title.
 
-`movie_embed_colour = 0xFB8800` | `tv_embed_colour = 0xDE4501` - The colours for the embeds (the coloured line on the left side of each embed - see the screenshots section for examples). Keep the `0x` and change the last 6 characters to the hex codes of your preferred colours.
+---
 
-`movie_emote = ":clapper:"` | `tv_emote = ":tv:"` - Optional emotes that will be appended to the title of each embed - see the screenshots for examples. Set them to empty strings `""` to disable them.
+The overall message caption that will go before the embeds. It will be bolded and put on its own line, and the loockback period will be appended to the end - see the screenshots for examples.  
+`message_options`>`title` = `Additions/updates to the media library from the last`
 
-`message_max_length = 4000` - The max length that embeds can reach before they become unsendable (it's technically 4096, but we need some headroom for `max_length_exceeded_msg`)
+---
 
-`max_length_exceeded_msg = "We couldn't fit all of the new media in one message, so check out the library for the rest!"` - The message that will display if a list is too long and needs to be cut short. Should be less than 90 characters. Will be bolded and appended with two newlines to the end of the list. See the bottom of the 1-week screenshot in the `Screenshots` section for an example.
+`embed_options`>`thumbnail` = `""` ~ Optional thumbnail that will go in all embeds. Set to an empty string `""` to disable it. Set to a direct image url string to enable it.
+
+---
+
+`embed_options`>`bullet` = `"•"` ~ The symbol to denote each new entry in the lists in the embeds. Can be replaced with emotes (e.g. :point_right:)
+
+---
+
+The colours for the embeds (the coloured line on the left side of each embed - see the screenshots section for examples). Keep the `0x` and change the last 6 characters to the hex codes of your preferred colours.  
+`embed_options`>`movies_colour` = `0xFB8800`
+`embed_options`>`shows_colour` = `0xDE4501`
+
+---
+
+Optional emotes that will be appended to the title of each embed - see the screenshots for examples. Set them to empty strings `""` to disable them. NOTE: You MUST encapsulate these in quotes if using emotes (or colons).  
+`movie_emote` = `":clapper:"`
+`shows_emote` = `":tv:"`
+
+---
+
+The message that will display if a list is too long and needs to be cut short. Should be less than 90 characters. Will be bolded and appended with two newlines to the end of the list. See the bottom of the 1-week screenshot in the `Screenshots` section for an example.  
+`overflow_footer` = `We couldn't fit all of the new media in one message, so check out the library for the rest!`
+
+## Uptime Status Monitoring
+
+The configuration file also includes an *optional* field `uptime_status` to allow the pinging of an uptime status push monitor (e.g. *push monitors* in Uptime Kuma or Healthchecks.io). To ensure the script is actually run on a regular schedule, it will ping a URL given by your instance of one of these services. If the script is not run, it will not ping the URL and will miss its check-in, at which points the service can alert you.
 
 # Running the Script
 
 The python script is meant to be scheduled and run on a regular basis, and to have its `lookback_time` variable be set to match that schedule. The default setting has it scanning your plex library and sending discord messages every 24 hours; if you intend to keep it that way, an appropriate schedule for this would be to have it run every 24 hours. This can be achieved via crontab, systemd timers, or if you're on unraid, you can use the user scripts plugin.
 
-# Uptime Kuma Add-On Script
-
-To ensure the script is actually run on a regular schedule, I have incorporated it into my Uptime Kuma setup via a bash script, and instead of a ping time, I've configured the script to send its execution time in seconds. You can do this too with the `PlexDiscordUpdates.sh` add-on script. Create a `Push` monitor in Uptime Kuma, set the heartbeat interval to 86520 seconds or just over a day (or a couple minutes over your scheduled interval if you're not using 24 hours), copy the Push URL, and then hit save. Then open up `PlexDiscordUpdates.sh` and set the variables as such:
-
-`PlexDiscordUpdates` - The path to the PlexDiscordUpdates.py script
-`PingURL` - The Push URL from your Uptime Kuma monitor
-
-Then hit save and you're done. Now instead of calling the python script, you'd call the bash script via your preferred method of scheduling.
