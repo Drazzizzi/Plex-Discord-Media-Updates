@@ -41,13 +41,13 @@ To be able to run this script with minimal configuration, these fields must be s
 
 `plex`>`url` ~ Your plex URL. Defaults to `https://localhost:32400`.
 
-`plex`>`token` ~ Your plex token
+`plex`>`token` ~ Your plex token.
 
 `plex`>`libraries`>`movies` ~ The name of your Movies library in plex. Defaults to `Movies`.
 
 `plex`>`libraries`>`shows` ~ The name of your TV Show library in plex. Defaults to `TV Shows`. 
 
-`plex_discord_media_updates`>`webhook` ~ Your discord webhook URL
+`plex_discord_media_updates`>`webhook` ~ Your discord webhook URL.
 
 Once these fields are set, running the script without changing the additional fields below will generate an output similar to the screenshots.
 
@@ -57,54 +57,69 @@ These are additional fields for optional customizations, listed along with their
 
 ---
 
-`lookback_period` = `24h` ~ Media added since this long ago will be listed. It can be configured to be a set amount of minutes, hours, days, or weeks.  
+`lookback_period` = `24h`
+
+Media added since this long ago will be listed. It can be configured to be a set amount of minutes, hours, days, or weeks.  
 Format/Examples: `4m`, `3h`, `2d`, and `1w` are all separately available options that respectively correspond to 4 minutes, 3 hours, 2 days, and 1 week.
 
 > Note: Don't set this to be too long; if the lists contain enough titles to exceed discord's character limit, they will be truncated.
 
 ---
 
-Skipped libraries (if set to `True`) will not be scanned or included in the webhook message.  
 `skip_libraries`>`movies` = `False`  
 `skip_libraries`>`shows` = `False`
 
----
-
-`show_total_episode_count` = `True` ~ Choose whether to show the total number of new episodes in the TV Show embed title
+Skipped libraries (if set to `True`) will not be scanned or included in the webhook message.  
 
 ---
 
-`show_episode_count_per_show` = `True` ~ Choose whether to show the number of new episodes for each individual show in the TV Show embed title.
+`show_total_episode_count` = `True`
+
+Choose whether to show the total number of new episodes in the TV Show embed title
 
 ---
 
-The overall message caption that will go before the embeds. It will be bolded and put on its own line, and the loockback period will be appended to the end - see the screenshots for examples.  
+`show_episode_count_per_show` = `True`
+
+Choose whether to show the number of new episodes for each individual show in the TV Show embed title.
+
+---
+
 `message_options`>`title` = `Additions/updates to the media library from the last`
 
----
-
-`embed_options`>`thumbnail` = `""` ~ Optional thumbnail that will go in all embeds. Set to an empty string `""` to disable it. Set to a direct image url string to enable it.
+The overall message caption that will go before the embeds. It will be bolded and put on its own line, and the loockback period will be appended to the end - see the screenshots for examples.  
 
 ---
 
-`embed_options`>`bullet` = `"•"` ~ The symbol to denote each new entry in the lists in the embeds. Can be replaced with emotes (e.g. :point_right:)
+`embed_options`>`thumbnail` = `""`
+
+Optional thumbnail that will go in all embeds. Set to an empty string `""` to disable it. Set to a direct image url string to enable it.
 
 ---
 
-The colours for the embeds (the coloured line on the left side of each embed - see the screenshots section for examples). Keep the `0x` and change the last 6 characters to the hex codes of your preferred colours.  
+`embed_options`>`bullet` = `"•"`
+
+The symbol to denote each new entry in the lists in the embeds. Can be replaced with emotes (e.g. :point_right:)
+
+---
+
 `embed_options`>`movies_colour` = `0xFB8800`  
 `embed_options`>`shows_colour` = `0xDE4501`
 
+The colours for the embeds (the coloured line on the left side of each embed - see the screenshots section for examples). Keep the `0x` and change the last 6 characters to the hex codes of your preferred colours.  
+
 ---
 
-Optional emotes that will be appended to the title of each embed - see the screenshots for examples. Set them to empty strings `""` to disable them. NOTE: You MUST encapsulate these in quotes if using emotes (or colons).  
 `movie_emote` = `":clapper:"`  
 `shows_emote` = `":tv:"`
 
+Optional emotes that will be appended to the title of each embed - see the screenshots for examples. Set them to empty strings `""` to disable them. NOTE: You MUST encapsulate these in quotes if using emotes (or colons).  
+
 ---
 
-The message that will display if a list is too long and needs to be cut short. Should be less than 90 characters. Will be bolded and appended with two newlines to the end of the list. See the bottom of the 1-week screenshot in the `Screenshots` section for an example.  
 `overflow_footer` = `We couldn't fit all of the new media in one message, so check out the library for the rest!`
+
+The message that will display if a list is too long and needs to be cut short. Should be less than 90 characters. Will be bolded and appended with two newlines to the end of the list. See the bottom of the 1-week screenshot in the `Screenshots` section for an example.  
 
 ## Uptime Status Monitoring
 
