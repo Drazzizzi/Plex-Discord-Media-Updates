@@ -113,7 +113,8 @@ The colours for the embeds (the coloured line on the left side of each embed - s
 `movie_emote` = `":clapper:"`  
 `shows_emote` = `":tv:"`
 
-Optional emotes that will be appended to the title of each embed - see the screenshots for examples. Set them to empty strings `""` to disable them. NOTE: You MUST encapsulate these in quotes if using emotes (or colons).  
+Optional emotes that will be appended to the title of each embed - see the screenshots for examples. Set them to empty strings `""` to disable them. 
+> NOTE: You MUST encapsulate these in quotes if using emotes (or colons).  
 
 ---
 
