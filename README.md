@@ -65,7 +65,7 @@ Format/Examples: `4m`, `3h`, `2d`, and `1w` are all separately available options
 ---
 
 Skipped libraries (if set to `True`) will not be scanned or included in the webhook message.  
-`skip_libraries`>`movies` = `False`
+`skip_libraries`>`movies` = `False`  
 `skip_libraries`>`shows` = `False`
 
 ---
@@ -92,13 +92,13 @@ The overall message caption that will go before the embeds. It will be bolded an
 ---
 
 The colours for the embeds (the coloured line on the left side of each embed - see the screenshots section for examples). Keep the `0x` and change the last 6 characters to the hex codes of your preferred colours.  
-`embed_options`>`movies_colour` = `0xFB8800`
+`embed_options`>`movies_colour` = `0xFB8800`  
 `embed_options`>`shows_colour` = `0xDE4501`
 
 ---
 
 Optional emotes that will be appended to the title of each embed - see the screenshots for examples. Set them to empty strings `""` to disable them. NOTE: You MUST encapsulate these in quotes if using emotes (or colons).  
-`movie_emote` = `":clapper:"`
+`movie_emote` = `":clapper:"`  
 `shows_emote` = `":tv:"`
 
 ---
