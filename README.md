@@ -60,7 +60,7 @@ These are additional fields for optional customizations, listed along with their
 `lookback_period` = `24h` ~ Media added since this long ago will be listed. It can be configured to be a set amount of minutes, hours, days, or weeks.  
 Format/Examples: `4m`, `3h`, `2d`, and `1w` are all separately available options that respectively correspond to 4 minutes, 3 hours, 2 days, and 1 week.
 
-> Note: Don't set this to be too long or some of the media in these lists will be skipped.
+> Note: Don't set this to be too long; if the lists contain enough titles to exceed discord's character limit, they will be truncated.
 
 ---
 
