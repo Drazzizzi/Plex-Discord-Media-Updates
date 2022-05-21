@@ -108,7 +108,7 @@ The message that will display if a list is too long and needs to be cut short. S
 
 ## Uptime Status Monitoring
 
-The configuration file also includes an *optional* field `uptime_status` to allow the pinging of an uptime status push monitor (e.g. *push monitors* in Uptime Kuma or Healthchecks.io). To ensure the script is actually run on a regular schedule, it will ping a URL given by your instance of one of these services. If the script is not run, it will not ping the URL and will miss its check-in, at which points the service can alert you.
+The configuration file also includes an *optional* field `uptime_status` to allow the pinging of an uptime status push monitor (e.g. *push monitors* in Uptime Kuma or Healthchecks.io). To ensure the script is actually run on a regular schedule, it will ping a URL given by your instance of one of these services, which will keep the monitor marked as running/up in your service. If the script is not run, it will miss its scheduled check-in and the service can alert you to it.
 
 # Running the Script
 
