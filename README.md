@@ -1,4 +1,4 @@
- # Plex Discord Media Updates
+ # Plex-Discord Media Updates
 
 This is a customizable python script that will send plex library updates to your discord server via webhook. Including listing the titles and release years of all new shows/movies added within a configurable time period, it can also count the amount and includes them in its embed titles, as well as count the episodes of each show and total episodes overall - see the screenshots section for examples. 
 
