@@ -1,0 +1,50 @@
+plex:
+    url: "https://localhost:32400"
+    token: "XXXXXXXXXXXXXXXXXXXXX"
+    libraries:
+        movies: Movies
+        shows: TV Shows
+
+plex_discord_media_updates:
+    # OPTIONALLY add push-monitoring URLs for services like Uptime Kuma or Healthchecks.io
+    uptime_status: ""
+    
+    # The discord webhook URL that will be used if not in testing mode (i.e. if testing_mode is set to False)
+    webhook: "https://discord.com/api/webhooks/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+    
+    # Media added since this long ago will be listed. 
+    # FORMAT: "1m", "1h", "1d", "1w" respectively correspond to 1 minute, 1 hour, 1 day, 1 week.
+    lookback_period: "24h"
+    
+    # Skipped libraries will not be scanned or included in the webhook message
+    skip_libraries:
+        movies: False
+        shows: False
+    
+    # Choose whether to show the total number of new episodes in the TV Show embed title
+    show_total_episode_count: True
+    
+    # Choose whether to show the number of new episodes for each individual show in the TV Show embed title.
+    show_episode_count_per_show: True
+    
+    message_options:
+        # Will be bolded and put on its own line, the loockback period will be appended to the end
+        title: "Additions/updates to the media library from the last"
+    
+    embed_options:
+        # Optional thumbnail that will go in all embeds. Set to an empty string ("") to disable it or set to a direct image url string to enable it.
+        thumbnail: "" 
+        
+        # The symbol to denote each new entry in the lists in the embeds. Can be replaced with emotes (e.g. :point_right:).
+        bullet: "•"
+        
+        # Keep the "0x" and change the last 6 characters to the hex codes of your preferred colours.
+        movies_colour: 0xFB8800
+        shows_colour: 0xDE4501
+        
+        # Optional emotes to be used in the title for each embed. Set these to empty strings ("") to disable. Must be in quotes.
+        movies_emote: ":clapper:"
+        shows_emote: ":tv:"
+
+    # The message that will display if a list is too long and needs to be cut short. Should be less than 90 characters. Will be bolded and appended with two newlines to the end of the list.
+    overflow_footer: "We couldn't fit all the new media in one message, so check out the library for the rest!"
