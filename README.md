@@ -2,7 +2,7 @@
 
 This is a customizable python script that will send plex library updates to your discord server via webhook. Including listing the titles and release years of all new shows/movies added within a configurable time period, it can also count the amount and includes them in its embed titles, as well as count the episodes of each show and total episodes overall - see the screenshots section for examples. 
 
-Furthermore, if there are too many movies or shows to be listed (discord has a max of ~4000 characters across embeds in a single message), instead of faiing to send the message, the script will automatically truncate the lists so that the message can be sent.
+Furthermore, if there are too many movies or shows to be listed (discord has a max of ~4000 characters across embeds in a single message), instead of failing to send the message, the script will automatically truncate the lists so that the message can be sent.
 
 # Screenshots
 
