@@ -33,7 +33,7 @@ This script requires Python 3, as well as the python modules outlined in `pip_re
 
 # Configuration
 
-All configuration and customizations is now done via the configuration file `config.yml` instead of via editing the python script itself.
+All configuration and customizations are now done via the configuration file `config.yml` instead of via editing the python script itself.
 
 ## Basic Settings
 
