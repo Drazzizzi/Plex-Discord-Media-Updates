@@ -93,7 +93,7 @@ The overall message caption that will go before the embeds. It will be bolded an
 
 `embed_options`>`thumbnail` = `""`
 
-Optional thumbnail that will go in all embeds. Set to an empty string `""` to disable it. Set to a direct image url string to enable it.
+Optional thumbnail that will go in all embeds. Set to an empty string `""` to disable it. Set to a direct image URL to enable it.
 
 ---
 
@@ -106,7 +106,7 @@ The symbol to denote each new entry in the lists in the embeds. Can be replaced 
 `embed_options`>`movies_colour` = `0xFB8800`  
 `embed_options`>`shows_colour` = `0xDE4501`
 
-The colours for the embeds (the coloured line on the left side of each embed - see the screenshots section for examples). Keep the `0x` and change the last 6 characters to the hex codes of your preferred colours.  
+The colours for the embeds (the coloured line along the left side of each embed - see the screenshots section for examples). Keep the `0x` and change the last 6 characters to the hex codes of your preferred colours.  
 
 ---
 
@@ -120,7 +120,7 @@ Optional emotes that will be appended to the title of each embed - see the scree
 
 `overflow_footer` = `We couldn't fit all of the new media in one message, so check out the library for the rest!`
 
-The message that will display if a list is too long and needs to be cut short. Should be less than 90 characters. Will be bolded and appended with two newlines to the end of the list. See the bottom of the 1-week screenshot in the `Screenshots` section for an example.  
+The message that will display if a list is too long and needs to be truncated. If you change this, ensure that it is less than 90 characters in length. It will automatically be bolded and appended with two newlines to the end of a truncated list. See the embeds in the 1-week screenshot in the `Screenshots` section for an example.  
 
 ## Uptime Status Monitoring
 
@@ -128,5 +128,5 @@ The configuration file also includes an *optional* field `uptime_status` to allo
 
 # Running the Script
 
-The python script is meant to be scheduled and run on a regular basis, and to have its `lookback_time` variable be set to match that schedule. The default setting has it scanning your plex library and sending discord messages every 24 hours; if you intend to keep it that way, an appropriate schedule for this would be to have it run every 24 hours. This can be achieved via crontab, systemd timers, or if you're on unraid, you can use the user scripts plugin.
+The python script is meant to be scheduled and run on a regular basis; its `lookback_time` variable should be set to match that schedule. The default config has it scanning your plex library for new media added within the last 24 hours. Therefore, an appropriate schedule would be to run the script every 24 hours. This can be achieved via crontab, systemd timers, or the user scripts plugin if you're on unraid.
 
