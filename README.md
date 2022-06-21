@@ -4,6 +4,8 @@ This is a customizable python script that will send plex library updates to your
 
 Furthermore, if there are too many movies or shows to be listed (discord has a max of ~4000 characters across embeds in a single message), instead of failing to send the message, the script will automatically truncate the lists so that the message can be sent.
 
+*Note: As this is just a python script, you will need to schedule it to run using a scheduler available on your operating system. See the `Running the Script` section for more info.*
+
 # Screenshots
 
 In the screenshots below, notice how the title changes to naturally reflect your preferred recently-added search period:
@@ -128,5 +130,5 @@ The configuration file also includes an *optional* field `uptime_status` to allo
 
 # Running the Script
 
-The python script is meant to be scheduled and run on a regular basis; its `lookback_time` variable should be set to match that schedule. The default config has it scanning your plex library for new media added within the last 24 hours. Therefore, an appropriate schedule would be to run the script every 24 hours. This can be achieved via crontab, systemd timers, or the user scripts plugin if you're on unraid.
+The python script is meant to be scheduled and run on a regular basis; its `lookback_time` variable should be set to match that schedule. The default configuration has it scanning your plex library for new media added within the last 24 hours. Therefore, an appropriate schedule would be to run the script every 24 hours. This can be achieved via crontab, systemd timers, or the user scripts plugin if you're on unraid.
 
