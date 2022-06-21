@@ -81,7 +81,7 @@ Choose whether to show the total number of new episodes in the TV Show embed tit
 
 `show_episode_count_per_show` = `True`
 
-Choose whether to show the number of new episodes for each individual show in the TV Show embed title.
+Choose whether to show the number of new episodes for each individual show in the TV Show embed.
 
 ---
 
