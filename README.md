@@ -87,7 +87,7 @@ Choose whether to show the number of new episodes for each individual show in th
 
 `message_options`>`title` = `Additions/updates to the media library from the last`
 
-The overall message caption that will go before the embeds. It will be bolded and put on its own line, and the loockback period will be appended to the end - see the screenshots for examples.  
+The overall message caption that will go before the embeds. It will be bolded and put on its own line, and the lookback period will be appended to the end - see the screenshots for examples.  
 
 ---
 
